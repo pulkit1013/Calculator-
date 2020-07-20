@@ -8,49 +8,53 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Claculator App</title>
+    <title>Calculator App</title>
   </head>
   <body>
     
 
     <div class='container'>
-      <h1>Calculator</h1>
+      <b><h1 class='text-dark'>Calculator</h1></b>
       <hr />
-      <form action="/calc?value1=5&value2=4&operation=+" method="POST">
+      <form action="/calc" method="POST">
         <div class="form-group">
-          <label for="Number One">First Number</label>
-        <input
-          type="text"
-          placeholder="First Number"
-          class="u-full-width"
-          name="value1"
-        />
+          <label for="Number One">Value 1</label>
+          <input
+            type="text"
+            placeholder="Input Value 1 here"
+            class="u-full-width float-right"
+            name="value1"
+            style="width: 70%;"
+          />
         </div>
 
         <div class="form-group">
-          <label for="Number Two">Second Number</label>
+          <label for="Number Two">Value 2</label>
         <input
           type="text"
-          placeholder="Second Number"
-          class="u-full-width"
+          placeholder="Input Value 2 here"
+          class="u-full-width float-right"
           name="value2"
+          style="width: 70%;"
         />  
         </div>
 
         <div class="form-group">
           <label for="Operation">Operation</label>
-          <select class="u-full-width" name="operation">
-            <option value="+">Add</option>
-            <option value="-">Subtract</option>
-            <option value="*">Multiply</option>
+          <select class="u-full-width float-right" name="operation">
+            <option value="selected">Select</option>
+            <option value="+" name="+">Add</option>
+            <option value="-" name="-">Subtract</option>
+            <option value="*" name="*">Multiply</option>
           </select>
         </div>
   
-        <input type="submit" value="Calculate" id="calc_btn" />
+        <input class='btm btn-online-dark' type="submit" value="Calculate" id="calc_btn" />
         <br />
         <br />
-        <div class=" form-group ">
-          RESULT: {{ sum }}
+        <hr />
+        <div class=" form-group " style="color: green">
+          <b>RESULT : {{ sum }}</b> 
         </div>
       </form>
     </div>
@@ -63,7 +67,3 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
-
-
-
-
